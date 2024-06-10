@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{501C0AC3-AD62-482B-8C34-7C51D9CC5950}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{107B5E21-8268-495A-AA3B-73A60744F27E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Ruleta.Game", "src\Api.Ruleta.Game\Api.Ruleta.Game.csproj", "{14AA2315-74B2-4A8F-9394-8F2856A90E55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Ruleta.Game.Application", "src\Api.Ruleta.Game.Application\Api.Ruleta.Game.Application.csproj", "{F75B2D6E-CB66-4512-85C2-F27F4F9A61C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Ruleta.Game.Domain", "src\Api.Ruleta.Game.Domain\Api.Ruleta.Game.Domain.csproj", "{A45E4301-67A1-4F36-B031-D547741A001E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Ruleta.Game.Infraestructure", "src\Api.Ruleta.Game.Infraestructure\Api.Ruleta.Game.Infraestructure.csproj", "{9D8F2D04-2695-42CE-A3D7-DE62FE23F5FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api.Ruleta.Game", "test\Test.Api.Ruleta.Game\Test.Api.Ruleta.Game.csproj", "{F7286321-5EAA-4FE4-9586-F27822F740FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14AA2315-74B2-4A8F-9394-8F2856A90E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AA2315-74B2-4A8F-9394-8F2856A90E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AA2315-74B2-4A8F-9394-8F2856A90E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AA2315-74B2-4A8F-9394-8F2856A90E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75B2D6E-CB66-4512-85C2-F27F4F9A61C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75B2D6E-CB66-4512-85C2-F27F4F9A61C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75B2D6E-CB66-4512-85C2-F27F4F9A61C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75B2D6E-CB66-4512-85C2-F27F4F9A61C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A45E4301-67A1-4F36-B031-D547741A001E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A45E4301-67A1-4F36-B031-D547741A001E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A45E4301-67A1-4F36-B031-D547741A001E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A45E4301-67A1-4F36-B031-D547741A001E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D8F2D04-2695-42CE-A3D7-DE62FE23F5FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D8F2D04-2695-42CE-A3D7-DE62FE23F5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D8F2D04-2695-42CE-A3D7-DE62FE23F5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D8F2D04-2695-42CE-A3D7-DE62FE23F5FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7286321-5EAA-4FE4-9586-F27822F740FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7286321-5EAA-4FE4-9586-F27822F740FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7286321-5EAA-4FE4-9586-F27822F740FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7286321-5EAA-4FE4-9586-F27822F740FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14AA2315-74B2-4A8F-9394-8F2856A90E55} = {501C0AC3-AD62-482B-8C34-7C51D9CC5950}
+		{F75B2D6E-CB66-4512-85C2-F27F4F9A61C3} = {501C0AC3-AD62-482B-8C34-7C51D9CC5950}
+		{A45E4301-67A1-4F36-B031-D547741A001E} = {501C0AC3-AD62-482B-8C34-7C51D9CC5950}
+		{9D8F2D04-2695-42CE-A3D7-DE62FE23F5FE} = {501C0AC3-AD62-482B-8C34-7C51D9CC5950}
+		{F7286321-5EAA-4FE4-9586-F27822F740FB} = {107B5E21-8268-495A-AA3B-73A60744F27E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5086B80-2A13-4A44-B13D-4E274A1293F5}
+	EndGlobalSection
+EndGlobal

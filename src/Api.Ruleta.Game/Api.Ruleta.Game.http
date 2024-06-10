@@ -1,0 +1,6 @@
+@Api.Ruleta.Game_HostAddress = http://localhost:5186
+
+GET {{Api.Ruleta.Game_HostAddress}}/ruleta-game/
+Accept: application/json
+
+###
