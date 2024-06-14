@@ -1,8 +1,10 @@
-﻿using Api.Ruleta.Game.Application.Dtos;
+﻿using Api.Ruleta.Game.Application.Constantes;
+using Api.Ruleta.Game.Application.Dtos;
 using Api.Ruleta.Game.Application.Enums;
 using Api.Ruleta.Game.Application.Singletons;
 using Api.Ruleta.Game.Domain.Entities;
 using Api.Ruleta.Game.Infraestructure.Repository;
+using System.Linq.Expressions;
 
 namespace Api.Ruleta.Game.Application.Services
 {
@@ -33,54 +35,46 @@ namespace Api.Ruleta.Game.Application.Services
                 var usuarioApuesta = UsuarioApuesta.Instance;
 
                 var premio = new PremioDto();
-                if (usuarioApuesta.numero != null)
+
+
+                switch (usuarioApuesta.apuestaAdicional)
                 {
-                    //si cumple if entonces gana premio
-                    if (resultado.color == usuarioApuesta.color && resultado.numero == usuarioApuesta.numero)
-                    {
-                        premio.ganaPremio = true;
-                        premio.montoPremio = usuarioApuesta.montoApuesta * 3;
-                        premio.montoApostado = usuarioApuesta.montoApuesta;
-                    }
-                    else//no acertó
-                    {
-                        premio.ganaPremio = false;
-                        premio.montoPremio = usuarioApuesta.montoApuesta * -1;
-                        premio.montoApostado = usuarioApuesta.montoApuesta;
-                    }
+                    case ApuestaAdicional.NUMERO:
+                        if (resultado.color == usuarioApuesta.color && resultado.numero == usuarioApuesta.numero)
+                        {
+                            premio.ganaPremio = true;
+                            premio.montoPremio = usuarioApuesta.montoApuesta * 3;
+                            premio.montoApostado = usuarioApuesta.montoApuesta;
+                            return premio;
+                        }
+                        break;
+                    case ApuestaAdicional.TIPO_NUMERO:
+                        if (resultado.color == usuarioApuesta.color && resultado.tipoNumero == usuarioApuesta.tipoNumero)
+                        {
+                            premio.ganaPremio = true;
+                            premio.montoPremio = usuarioApuesta.montoApuesta;
+                            premio.montoApostado = usuarioApuesta.montoApuesta;
+                            return premio;
+                        }
+                        break;
+                    case ApuestaAdicional.NINGUNO:
+                        if (resultado.color == usuarioApuesta.color)
+                        {
+                            premio.ganaPremio = true;
+                            premio.montoPremio = usuarioApuesta.montoApuesta / 2;
+                            premio.montoApostado = usuarioApuesta.montoApuesta;
+                            return premio;
+                        }
+                        break;
 
                 }
-                else if (usuarioApuesta.tipoNumero != TipoNumero.NIGUNO)
-                {
 
-                    //si gana
-                    if (resultado.color == usuarioApuesta.color && resultado.tipoNumero == usuarioApuesta.tipoNumero)
-                    {
-                        premio.ganaPremio = true;
-                        premio.montoPremio = usuarioApuesta.montoApuesta;
-                        premio.montoApostado = usuarioApuesta.montoApuesta;
-                    }
-                    else //si pierde
-                    {
-                        premio.ganaPremio = false;
-                        premio.montoPremio = usuarioApuesta.montoApuesta * -1;
-                        premio.montoApostado = usuarioApuesta.montoApuesta;
-                    }
+                premio.ganaPremio = false;
+                premio.montoPremio = usuarioApuesta.montoApuesta * -1;
+                premio.montoApostado = usuarioApuesta.montoApuesta;
 
-                }
-                else if (resultado.color == usuarioApuesta.color)
-                {
-                    premio.ganaPremio = true;
-                    premio.montoPremio = usuarioApuesta.montoApuesta / 2;
-                    premio.montoApostado = usuarioApuesta.montoApuesta;
-                }
-                else
-                {
-                    premio.ganaPremio = false;
-                    premio.montoPremio = usuarioApuesta.montoApuesta * -1;
-                    premio.montoApostado = usuarioApuesta.montoApuesta;
-                }
                 return premio;
+
             });
 
         }
@@ -100,7 +94,7 @@ namespace Api.Ruleta.Game.Application.Services
 
             if (usuario != null)
             {
-                if (!usuarioData.existeUsuario)
+                if (usuarioData.existeUsuario)
                 {
                     usuario.Monto += usuarioData.monto;
                 }

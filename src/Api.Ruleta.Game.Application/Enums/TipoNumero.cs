@@ -3,5 +3,5 @@ public enum TipoNumero
 {
     PAR,
     IMPAR,
-    NIGUNO
+    NIGUNO = -1
 }

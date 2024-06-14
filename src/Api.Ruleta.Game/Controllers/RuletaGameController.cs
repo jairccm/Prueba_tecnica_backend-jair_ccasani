@@ -83,6 +83,7 @@ namespace Api.Ruleta.Game.Controllers
                 UsuarioApuesta.Instance.color = apuesta.color;
                 UsuarioApuesta.Instance.numero = apuesta.numero;
                 UsuarioApuesta.Instance.montoApuesta = apuesta.montoApuesta;
+                UsuarioApuesta.Instance.apuestaAdicional = apuesta.apuestaAdicional;
                 return Ok();
             }
             catch (Exception ex)

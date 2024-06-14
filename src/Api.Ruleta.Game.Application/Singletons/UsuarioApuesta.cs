@@ -9,6 +9,7 @@ public class UsuarioApuesta
     public int? numero { get; set; }
     public decimal montoApuesta { get; set; }
     public decimal montoSaldo { get; set; }
+    public string apuestaAdicional {  get; set; }
 
     private static UsuarioApuesta instance = null;
     protected UsuarioApuesta() { }
